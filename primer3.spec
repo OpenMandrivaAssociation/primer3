@@ -1,7 +1,6 @@
 %define name	primer3
-%define version 1.0.0
-%define Version	0_9
-%define release %mkrel 2
+%define version 1.1.1
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -9,8 +8,8 @@ Release:	%{release}
 Summary:	PCR reactions primers identification
 Group:		Sciences/Biology
 License:	BSD like
-URL:		http://www-genome.wi.mit.edu/genome_software/other/primer3.html
-Source:		http://frodo.wi.mit.edu/primer3/%{name}_%{Version}_test.tar.bz2
+URL:		http://primer3.sourceforge.net/
+Source:		http://downloads.sourceforge.net/primer3/%{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
@@ -29,8 +28,8 @@ some are specifiable as terms in an objective function that
 characterizes an optimal primer pair.
 
 %prep
-%setup -q -n %{name}_%{Version}_test
-chmod 644  Copyright README example
+%setup -q -n %{name}-%{version}
+chmod 644  COPYING.txt README.txt example
 
 %build
 cd src && %make CFLAGS="$RPM_OPT_FLAGS" LIBOPTS=""
@@ -45,6 +44,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc Copyright README example src/release_notes
+%doc COPYING.txt README.txt example src/release_notes.txt
 %{_bindir}/primer3_core
 
