@@ -10,6 +10,7 @@ Group:		Sciences/Biology
 License:	BSD like
 URL:		http://primer3.sourceforge.net/
 Source:		http://downloads.sourceforge.net/primer3/%{name}-%{version}.tar.bz2
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Primer3 is a complete rewrite of the original PRIMER program
