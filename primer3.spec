@@ -1,6 +1,6 @@
 %define name	primer3
-%define version 1.1.1
-%define release %mkrel 3
+%define version 1.1.4
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -9,7 +9,8 @@ Summary:	PCR reactions primers identification
 Group:		Sciences/Biology
 License:	BSD like
 URL:		http://primer3.sourceforge.net/
-Source:		http://downloads.sourceforge.net/primer3/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/primer3/%{name}-%{version}.tar.bz2
+Patch0:		format_arguments_fix.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
@@ -30,6 +31,8 @@ characterizes an optimal primer pair.
 %prep
 %setup -q -n %{name}-%{version}
 chmod 644  COPYING.txt README.txt example
+
+%patch0 -p1
 
 %build
 cd src && %make CFLAGS="$RPM_OPT_FLAGS" LIBOPTS=""
