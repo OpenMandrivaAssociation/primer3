@@ -1,6 +1,6 @@
 %define name	primer3
 %define version 1.1.4
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:		%{name}
 Version:	%{version}
