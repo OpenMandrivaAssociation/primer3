@@ -1,7 +1,7 @@
 %define build_with_tests	1
 
 %define name	primer3
-%define version 2.3.0
+%define version 2.3.1
 %define release 1
 
 Name:		%{name}
