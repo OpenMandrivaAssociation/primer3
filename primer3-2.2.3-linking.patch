@@ -1,0 +1,16 @@
+diff -p -up ./src/Makefile.orig ./src/Makefile
+--- ./src/Makefile.orig	2010-12-10 15:26:58.000000000 +0100
++++ ./src/Makefile	2010-12-10 15:29:53.000000000 +0100
+@@ -161,10 +161,10 @@ $(NTTHAL_EXE): thal_main.o thal.o
+ 	$(CPP) $(LDFLAGS) -o $@ thal_main.o thal.o $(LDLIBS)
+ 
+ $(OLIGOTM_EXE): oligotm_main.c oligotm.h $(LIBOLIGOTM)
+-	$(CPP) $(CFLAGS) -o $@ oligotm_main.c $(LIBOLIGOTM) $(LIBOPTS) $(LDLIBS)
++	$(CPP) $(CFLAGS) -o $@ oligotm_main.c $(LDFLAGS) $(LIBOLIGOTM) $(LIBOPTS) $(LDLIBS)
+ 
+ $(LONG_SEQ_EXE): long_seq_tm_test_main.c oligotm.o
+-	$(CPP) $(CFLAGS) -o $@ long_seq_tm_test_main.c oligotm.o $(LIBOPTS) $(LDLIBS)
++	$(CPP) $(CFLAGS) -o $@ long_seq_tm_test_main.c $(LDFLAGS) oligotm.o $(LIBOPTS) $(LDLIBS)
+ 
+ read_boulder.o: read_boulder.c read_boulder.h libprimer3.h dpal.h thal.h p3_seq_lib.h 
+ 	$(CPP) -c $(CFLAGS) $(P_DEFINES) -o $@ read_boulder.c
