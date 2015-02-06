@@ -2,7 +2,7 @@
 
 %define name	primer3
 %define version 2.3.1
-%define release 1
+%define release 2
 
 Name:		%{name}
 Version:	%{version}
