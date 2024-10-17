@@ -6,7 +6,7 @@ Release:	1
 Summary:	PCR reactions primers identification
 Group:		Sciences/Biology
 License:	BSD and GPLv2+
-URL:		http://primer3.sourceforge.net/
+URL:		https://primer3.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/primer3/%{name}-src-%{version}.tar.gz
 Patch0:		primer3-2.2.3-linking.patch
 
